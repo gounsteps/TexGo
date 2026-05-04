@@ -30,10 +30,10 @@ const HREFLANG_HOME = [
 ];
 
 const HREFLANG_FAQ = [
-  { lang: "ko", href: `${SITE}/faq` },
-  { lang: "ja", href: `${SITE}/ja/faq` },
-  { lang: "en", href: `${SITE}/en/faq` },
-  { lang: "x-default", href: `${SITE}/faq` },
+  { lang: "ko", href: `${SITE}/faq/` },
+  { lang: "ja", href: `${SITE}/ja/faq/` },
+  { lang: "en", href: `${SITE}/en/faq/` },
+  { lang: "x-default", href: `${SITE}/faq/` },
 ];
 
 const routes = [
@@ -59,8 +59,8 @@ const routes = [
     title: "자주 묻는 질문 | 탈퇴일시금·소득세 환급 대행 TaxGo",
     description: "탈퇴일시금 신청 기간, 수령 금액, 소득세 환급, 납세관리인 선임 등 자주 묻는 질문을 확인하세요. 일본 귀국 후 2년 이내 신청 가능.",
     keywords: "탈퇴일시금 FAQ, 탈퇴일시금 신청방법, 소득세 환급 방법, 납세관리인, 일본 연금 질문, 탈퇴일시금 기간",
-    canonical: `${SITE}/faq`,
-    ogUrl: `${SITE}/faq`,
+    canonical: `${SITE}/faq/`,
+    ogUrl: `${SITE}/faq/`,
     hreflang: HREFLANG_FAQ,
   },
   {
@@ -85,8 +85,8 @@ const routes = [
     title: "よくある質問 | 脱退一時金・所得税還付代行 TaxGo",
     description: "脱退一時金の申請期限・受給額・所得税還付・納税管理人についてよくある質問をご確認ください。帰国後2年以内に申請可能。",
     keywords: "脱退一時金 FAQ, 脱退一時金 申請方法, 所得税還付 方法, 納税管理人, 年金 外国人 質問, 脱退一時金 期限",
-    canonical: `${SITE}/ja/faq`,
-    ogUrl: `${SITE}/ja/faq`,
+    canonical: `${SITE}/ja/faq/`,
+    ogUrl: `${SITE}/ja/faq/`,
     hreflang: HREFLANG_FAQ,
   },
   {
@@ -111,8 +111,8 @@ const routes = [
     title: "FAQ | Japan Pension Lump-sum Withdrawal & Tax Refund — TaxGo",
     description: "FAQ on Japan pension lump-sum withdrawal: eligibility, deadlines, refund amounts, income tax refund, and tax agent requirements. Apply within 2 years of leaving Japan.",
     keywords: "Japan pension FAQ, lump-sum withdrawal questions, Japan income tax refund FAQ, tax agent Japan, pension withdrawal eligibility",
-    canonical: `${SITE}/en/faq`,
-    ogUrl: `${SITE}/en/faq`,
+    canonical: `${SITE}/en/faq/`,
+    ogUrl: `${SITE}/en/faq/`,
     hreflang: HREFLANG_FAQ,
   },
 ];

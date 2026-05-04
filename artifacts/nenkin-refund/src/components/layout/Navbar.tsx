@@ -15,9 +15,9 @@ function getFormUrl(lang: Language): string {
 }
 
 function getLangPrefix(lang: Language): string {
-  if (lang === "ja") return "/ja";
-  if (lang === "en") return "/en";
-  return "";
+  if (lang === "ja") return "/ja/";
+  if (lang === "en") return "/en/";
+  return "/";
 }
 
 const LANG_LABELS: { value: Language; label: string }[] = [
@@ -32,7 +32,7 @@ function LangSwitcher({ lang }: { lang: Language }) {
   const switchTo = (targetLang: Language) => {
     const isFaq = location.includes("/faq");
     const prefix = getLangPrefix(targetLang);
-    const path = isFaq ? `${prefix}/faq` : (prefix || "/");
+    const path = isFaq ? `${prefix}faq/` : prefix;
     setLanguage(targetLang);
     navigate(path);
   };
@@ -69,8 +69,8 @@ export function Navbar() {
   }, []);
 
   const prefix = getLangPrefix(lang);
-  const homeHref = prefix || "/";
-  const faqHref = `${prefix}/faq`;
+  const homeHref = prefix;
+  const faqHref = `${prefix}faq/`;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

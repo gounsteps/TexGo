@@ -27,8 +27,8 @@ export default function FAQ() {
 
   const origin = typeof window !== "undefined" ? window.location.origin : "https://taxgo.jp";
   const langPath = lang === "ko" ? "" : `/${lang}`;
-  const faqUrl = `${origin}/faq`;
-  const canonicalUrl = `${origin}${langPath}/faq`;
+  const faqUrl = `${origin}/faq/`;
+  const canonicalUrl = `${origin}${langPath}/faq/`;
 
   const jsonLd = [
     {

@@ -39,10 +39,15 @@ function Router() {
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/faq" component={FAQ} />
+            <Route path="/faq/" component={FAQ} />
             <Route path="/ja" component={JaHome} />
+            <Route path="/ja/" component={JaHome} />
             <Route path="/ja/faq" component={JaFAQ} />
+            <Route path="/ja/faq/" component={JaFAQ} />
             <Route path="/en" component={EnHome} />
+            <Route path="/en/" component={EnHome} />
             <Route path="/en/faq" component={EnFAQ} />
+            <Route path="/en/faq/" component={EnFAQ} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
