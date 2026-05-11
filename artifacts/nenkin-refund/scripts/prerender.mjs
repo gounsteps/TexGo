@@ -309,6 +309,21 @@ for (const route of routes) {
   const outputFile = path.join(route.outputDir, "index.html");
   fs.writeFileSync(outputFile, html, "utf-8");
 
+  // Also write to the no-trailing-slash filename so GitHub Pages serves 200 OK
+  // instead of redirecting /faq → /faq/ (which Google reports as a redirect).
+  // e.g. dist/public/faq.html, dist/public/ja/faq.html, dist/public/en/faq.html
+  //      dist/public/ja.html, dist/public/en.html
+  const isRoot = route.url === "/";
+  if (!isRoot) {
+    // route.outputDir is the directory (e.g. dist/public/faq)
+    // The .html sibling lives one level up (e.g. dist/public/faq.html)
+    const dirName = path.basename(route.outputDir);           // "faq" | "ja" | "en" …
+    const parentDir = path.dirname(route.outputDir);          // dist/public | dist/public/ja …
+    const siblingFile = path.join(parentDir, `${dirName}.html`);
+    fs.writeFileSync(siblingFile, html, "utf-8");
+    console.log(`  ✓ Also written (no-slash): ${siblingFile}`);
+  }
+
   const isFaq = route.url.includes("/faq");
   const schemaCount = isFaq ? 2 : 3;
   console.log(`  ✓ title: ${route.title}`);

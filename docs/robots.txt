@@ -56,4 +56,7 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+# Block query-parameter language URLs — path-based routing is canonical
+Disallow: /*?lang=
+
 Sitemap: https://taxgo.jp/sitemap.xml
