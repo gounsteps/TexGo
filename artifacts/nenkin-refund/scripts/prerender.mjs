@@ -254,24 +254,24 @@ function buildHead(route) {
   const hreflangTags = route.hreflang
     .map(
       ({ lang, href }) =>
-        `    <link rel="alternate" hreflang="${lang}" href="${href}" />`
+        `    <link rel="alternate" hreflang="${lang}" href="${href}" data-rh="true" />`
     )
     .join("\n");
 
   const jsonLdTags = buildJsonLd(route);
 
   return `
-    <title>${route.title}</title>
-    <meta name="description" content="${route.description}" />
-    <meta name="keywords" content="${route.keywords}" />
-    <link rel="canonical" href="${route.canonical}" />
+    <title data-rh="true">${route.title}</title>
+    <meta name="description" content="${route.description}" data-rh="true" />
+    <meta name="keywords" content="${route.keywords}" data-rh="true" />
+    <link rel="canonical" href="${route.canonical}" data-rh="true" />
 ${hreflangTags}
-    <meta property="og:url" content="${route.ogUrl}" />
-    <meta property="og:title" content="${route.title}" />
-    <meta property="og:description" content="${route.description}" />
-    <meta property="og:locale" content="${route.ogLocale}" />
-    <meta name="twitter:title" content="${route.title}" />
-    <meta name="twitter:description" content="${route.description}" />
+    <meta property="og:url" content="${route.ogUrl}" data-rh="true" />
+    <meta property="og:title" content="${route.title}" data-rh="true" />
+    <meta property="og:description" content="${route.description}" data-rh="true" />
+    <meta property="og:locale" content="${route.ogLocale}" data-rh="true" />
+    <meta name="twitter:title" content="${route.title}" data-rh="true" />
+    <meta name="twitter:description" content="${route.description}" data-rh="true" />
     ${jsonLdTags}`;
 }
 
