@@ -30,9 +30,23 @@ const EnHome = makeLangHome("en");
 const JaFAQ = makeLangFAQ("ja");
 const EnFAQ = makeLangFAQ("en");
 
+function LangParamRedirect() {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const langParam = params.get("lang");
+    if (langParam === "ja" || langParam === "en") {
+      const isFaq = window.location.pathname.includes("/faq");
+      const prefix = langParam === "ja" ? "/ja/" : "/en/";
+      window.location.replace(isFaq ? `${prefix}faq/` : prefix);
+    }
+  }, []);
+  return null;
+}
+
 function Router() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
+      <LangParamRedirect />
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<div className="min-h-screen" />}>

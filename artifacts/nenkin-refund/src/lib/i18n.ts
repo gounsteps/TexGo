@@ -411,8 +411,6 @@ function detectInitialLang(): Language {
   const pathname = window.location.pathname;
   if (pathname.startsWith("/ja")) return "ja";
   if (pathname.startsWith("/en")) return "en";
-  const urlLang = new URLSearchParams(window.location.search).get("lang");
-  if (urlLang === "ja" || urlLang === "ko" || urlLang === "en") return urlLang;
   try {
     const stored = localStorage.getItem("taxgo-lang");
     if (stored === "ja" || stored === "ko" || stored === "en") return stored;
